@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AdditionController {
 	
-	@RequestMapping(value = "/add")
+	@RequestMapping(value = "/add",method = RequestMethod.POST)
 	public ModelAndView getAdditionResult(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView();
 		int a = Integer.parseInt(request.getParameter("t1"));
