@@ -45,14 +45,7 @@ pipeline {
                 }   
             }
         }
-	    stage("Quality Gate") {
-		steps {
-			sleep(10)
-			timeout(time: 10, unit: 'MINUTES') {
-			waitForQualityGate abortPipeline: true
-				}
-		}
-}
+	    
         stage('Artifactory')
         {
 	        steps
