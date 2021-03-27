@@ -76,7 +76,7 @@ steps{
 bat "docker run --name assignmentcontainer -d -p 9065:8080 assignmentimage:${BUILD_NUMBER}"
 }
 }
-}
+
         stage('Release') {
             steps 
 	    {
