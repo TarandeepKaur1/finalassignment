@@ -71,14 +71,14 @@ steps{
 bat "docker build -t assignmentimage:${BUILD_NUMBER} ."
 }
 }
-	    stage("Cleaning Previous Deployment"){
+	/*    stage("Cleaning Previous Deployment"){
 steps{
 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 bat "docker stop assignmentdevcontainer"
 bat "docker rm -f assignmentdevcontainer"
 }
 }
-}
+}*/
 stage('Docker Deployment'){
 steps{
 bat "docker run --name assignmentcontainer -d -p 9065:8080 assignmentimage:${BUILD_NUMBER}"
