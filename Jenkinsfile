@@ -68,7 +68,7 @@ pipeline {
 	}
 	stage('Build Image'){
 steps{
-bat "docker build -t assignmentimage:${BUILD_NUMBER} ."
+bat "docker build -t assignmentimage ."
 }
 }
 	   stage("Cleaning Previous Deployment"){
@@ -81,7 +81,7 @@ bat "docker rm -f assignmentcontainer"
 }
 stage('Docker Deployment'){
 steps{
-bat "docker run --name assignmentcontainer -d -p 9065:8080 assignmentimage:${BUILD_NUMBER}"
+bat "docker run --name assignmentcontainer -d -p 9065:8080 assignmentimage"
 }
 }
 
